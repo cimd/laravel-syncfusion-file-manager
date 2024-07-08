@@ -29,8 +29,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app): array
     {
         return [
-            'Konnec\VueEloquentApi\Providers\ServiceProvider',
-            'Konnec\VueEloquentApi\Providers\RouteServiceProvider',
+//            'Konnec\FileManager\Providers\ServiceProvider',
         ];
     }
 
@@ -46,9 +45,9 @@ abstract class TestCase extends BaseTestCase
      */
     protected function defineRoutes($router): void
     {
-        $router->apiResource('/users', PostController::class);
-        $router->batch('/posts', PostController::class);
-        $router->apiResource('/posts', PostController::class);
+//        $router->apiResource('/users', PostController::class);
+//        $router->batch('/posts', PostController::class);
+//        $router->apiResource('/posts', PostController::class);
     }
 
     protected function setFactoriesNamespacing(): void
