@@ -1,0 +1,11 @@
+{
+  "method": "POST",
+  "request": {
+    "uploadedFiles": "(binary)",
+    "path": "/leedo/TEatQA-rename(1)(1)/",
+    "action": "save",
+    "data": "{\"path\":null,\"action\":null,\"newName\":null,\"names\":null,\"name\":\"TEatQA-rename(1)(1)\",\"size\":0,\"previousName\":null,\"dateModified\":\"2024-07-08T12:40:24.4840674+00:00\",\"dateCreated\":\"2024-07-08T12:40:37.4125911+00:00\",\"hasChild\":true,\"isFile\":false,\"type\":\"\",\"id\":null,\"filterPath\":\"\\\\leedo\\\\\",\"filterId\":null,\"parentId\":null,\"targetPath\":null,\"renameFiles\":null,\"uploadFiles\":null,\"caseSensitive\":false,\"searchString\":null,\"showHiddenItems\":false,\"showFileExtension\":false,\"data\":null,\"targetData\":null,\"permission\":null,\"_fm_id\":\"fe_tree_2_2\"}",
+    "filename": "layouts.sql"
+  },
+  "response": {}
+}

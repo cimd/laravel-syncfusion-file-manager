@@ -1,0 +1,62 @@
+{
+  "method": "POST",
+  "request": {
+    "action": "details",
+    "path": "/a(1)/a/ji/a(1)/szcsd/",
+    "names": [],
+    "data": [
+      {
+        "path": null,
+        "action": null,
+        "newName": null,
+        "names": null,
+        "name": "szcsd",
+        "size": 0,
+        "previousName": null,
+        "dateModified": "2024-07-08T10:48:17.1107521+00:00",
+        "dateCreated": "2024-07-08T10:48:17.0482495+00:00",
+        "hasChild": true,
+        "isFile": false,
+        "type": "",
+        "id": null,
+        "filterPath": "\\a(1)\\a\\ji\\a(1)\\",
+        "filterId": null,
+        "parentId": null,
+        "targetPath": null,
+        "renameFiles": null,
+        "uploadFiles": null,
+        "caseSensitive": false,
+        "searchString": null,
+        "showHiddenItems": false,
+        "showFileExtension": false,
+        "data": null,
+        "targetData": null,
+        "permission": null,
+        "_fm_created": "July 08, 2024 18:48",
+        "_fm_modified": "July 08, 2024 18:48",
+        "_fm_iconClass": "e-fe-folder",
+        "_fm_id": "fe_tree_0_0_0_0_0",
+        "_fm_icon": "e-fe-folder",
+        "_fm_htmlAttr": {},
+        "_fm_pId": "fe_tree_0_0_0_0",
+        "_fm_selected": true,
+        "_fm_expanded": true
+      }
+    ]
+  },
+  "response": {
+    "cwd": null,
+    "files": null,
+    "error": null,
+    "details": {
+      "name": "szcsd",
+      "location": "Files\\a(1)\\a\\ji\\a(1)\\szcsd",
+      "isFile": false,
+      "size": "0 B",
+      "created": "2024-07-08T10:48:17.1649194+00:00",
+      "modified": "2024-07-08T10:48:17.1107521+00:00",
+      "multipleFiles": false,
+      "permission": null
+    }
+  }
+}
