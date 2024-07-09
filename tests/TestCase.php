@@ -4,6 +4,7 @@ namespace Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Konnec\Examples\Controllers\FileManagerController;
 use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
@@ -15,8 +16,8 @@ abstract class TestCase extends BaseTestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
         $this->setFactoriesNamespacing();
+        parent::setUp();
     }
 
     /**
@@ -44,9 +45,15 @@ abstract class TestCase extends BaseTestCase
      */
     protected function defineRoutes($router): void
     {
-        //        $router->apiResource('/users', PostController::class);
-        //        $router->batch('/posts', PostController::class);
-        //        $router->apiResource('/posts', PostController::class);
+        $router->post('copy', [FileManagerController::class, 'copy']);
+        $router->post('create', [FileManagerController::class, 'create']);
+        $router->post('move', [FileManagerController::class, 'move']);
+        $router->post('delete', [FileManagerController::class, 'delete']);
+        $router->post('details', [FileManagerController::class, 'details']);
+        $router->post('read', [FileManagerController::class, 'read']);
+        $router->post('rename', [FileManagerController::class, 'rename']);
+        $router->post('search', [FileManagerController::class, 'search']);
+        $router->post('upload', [FileManagerController::class, 'upload']);
     }
 
     protected function setFactoriesNamespacing(): void

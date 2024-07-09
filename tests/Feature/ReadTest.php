@@ -9,7 +9,7 @@ it('reads files', function () {
     KonnecFile::factory()->create();
 
     $file = KonnecFile::first();
-    dump($file);
+//    dump($file);
 
     $request = [
         'path' => $file->path,

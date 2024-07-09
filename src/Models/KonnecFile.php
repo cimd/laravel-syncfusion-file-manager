@@ -11,6 +11,8 @@ class KonnecFile extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'konnec_filemanager';
+
     protected $guarded = [
         'id',
         'created_at',

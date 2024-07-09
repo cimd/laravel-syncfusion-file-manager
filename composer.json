@@ -10,24 +10,24 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.3",
         "spatie/laravel-data": "^4.6"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.13",
-        "driftingly/rector-laravel": "^0.26",
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "driftingly/rector-laravel": "^1.2",
         "fakerphp/faker": "^1.23",
-        "laravel/pint": "^1.13",
+        "laravel/pint": "^1.16",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^7.10",
+        "nunomaduro/collision": "^v8.1",
         "larastan/larastan": "^2.9",
-        "orchestra/testbench": "^9.1,
+        "orchestra/testbench": "^9.1",
         "pestphp/pest": "^2.24",
         "pestphp/pest-plugin-faker": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.2",
         "phpunit/phpunit": "^10.4",
-        "rector/rector": "^0.18",
-        "spatie/laravel-ignition": "^2.3"
+        "rector/rector": "^1.2",
+        "spatie/laravel-ignition": "^2.8"
     },
     "autoload": {
         "psr-4": {
@@ -72,6 +72,7 @@
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": "@php vendor/bin/testbench workbench:build --ansi",
         "serve": [
+            "Composer\\Config::disableProcessTimeout",
             "@build",
             "@php vendor/bin/testbench serve"
         ],
