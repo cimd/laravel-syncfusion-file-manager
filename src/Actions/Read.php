@@ -2,19 +2,20 @@
 
 namespace Konnec\FileManager\Actions;
 
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Collection;
+use Konnec\FileManager\Dtos\ReadRequest;
+use Konnec\FileManager\Models\KonnecFile;
 use Konnec\FileManager\Traits\Actionable;
 
 class Read
 {
     use Actionable;
 
-    public function run(string $path, string $disk): array
+    public function run(ReadRequest $request): Collection
     {
-        $files = Storage::disk($disk)->files($path);
-        $directory = Storage::disk($disk)->directories($path);
+        $query = KonnecFile::query()
+            ->where('path', $request->path);
 
-        return array_merge($files, $directory);
-
+        return $query->get();
     }
 }

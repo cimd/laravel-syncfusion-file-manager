@@ -14,6 +14,8 @@ workbench:
     web: false
     api: false
     commands: false
-  build: []
+  build:
+    - create-sqlite-db
+    - migrate:refresh
   assets: []
   sync: []

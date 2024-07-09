@@ -4,7 +4,6 @@ namespace Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Konnec\Examples\Controllers\PostController;
 use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
@@ -29,7 +28,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app): array
     {
         return [
-//            'Konnec\FileManager\Providers\ServiceProvider',
+            'Konnec\FileManager\Providers\ServiceProvider',
         ];
     }
 
@@ -45,9 +44,9 @@ abstract class TestCase extends BaseTestCase
      */
     protected function defineRoutes($router): void
     {
-//        $router->apiResource('/users', PostController::class);
-//        $router->batch('/posts', PostController::class);
-//        $router->apiResource('/posts', PostController::class);
+        //        $router->apiResource('/users', PostController::class);
+        //        $router->batch('/posts', PostController::class);
+        //        $router->apiResource('/posts', PostController::class);
     }
 
     protected function setFactoriesNamespacing(): void
@@ -61,7 +60,7 @@ abstract class TestCase extends BaseTestCase
 
             // Finally we'll build up the full class path where
             // Laravel will find our model factory
-            return $namespace . $modelName . 'Factory';
+            return $namespace.$modelName.'Factory';
         });
     }
 }
