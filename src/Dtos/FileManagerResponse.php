@@ -4,7 +4,7 @@ namespace Konnec\FileManager\Dtos;
 
 use Spatie\LaravelData\Data;
 
-class ReadResponse extends Data
+class FileManagerResponse extends Data
 {
     public function __construct(
         public DataDto $cwd,
@@ -13,7 +13,7 @@ class ReadResponse extends Data
         public mixed $details = null
     ) {}
 
-    public static function fromResponse(array $data): self
+    public static function fromAction(array $data): self
     {
         return new self(
             cwd: DataDto::from($data['cwd']),

@@ -1,33 +1,22 @@
 <?php
 
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 use Konnec\FileManager\Actions\Read;
+use Konnec\FileManager\Dtos\FileManagerRequest;
 use Konnec\FileManager\Models\KonnecFile;
 
-it('reads files', function () {
-    KonnecFile::factory()->create();
-
-    $file = KonnecFile::first();
-//    dump($file);
-
-    $request = [
-        'path' => $file->path,
-    ];
-
-    $response = $this->postJson('/read', $request);
-    dump($response->json());
-
-    $response->assertStatus(200);
+beforeEach(function () {
+    KonnecFile::truncate();
 });
 
-it('reads files from filesystem', function () {
-    Storage::fake('photos');
-    $file = UploadedFile::fake()->image('photo1.jpg');
-    Storage::disk('photos')->put('photo1.jpg', $file);
+it('reads database', function () {
+    KonnecFile::factory()->create();
 
-    $files = Read::handle('', 'photos');
-    dump($files); // ['photo1.jpg']
+    $array = loadFixture('./Fixtures/file-manager-api/read-folder.json', 'request');
+    $request = new Illuminate\Http\Request($array);
 
-    Storage::disk('photos')->assertExists('photo1.jpg');
-})->skip();
+    $requestDto = FileManagerRequest::fromRequest($request);
+
+    $result = Read::handle($requestDto);
+
+    expect($result)->toHaveCount(1);
+});

@@ -13,7 +13,7 @@ class KonnecFileFactory extends Factory
     {
         return [
             'disk' => 'local',
-            'path' => '/photos',
+            'path' => '/photos/',
             'extension' => fake()->fileExtension(),
             'name' => fake()->name(),
             'hasChild' => false,

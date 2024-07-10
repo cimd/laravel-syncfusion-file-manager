@@ -2,7 +2,7 @@
   "method": "POST",
   "request": {
     "action": "read",
-    "path": "/a(1)/",
+    "path": "/photos/",
     "showHiddenItems": false,
     "data": [
       {
@@ -49,7 +49,7 @@
       "action": null,
       "newName": null,
       "names": null,
-      "name": "a(1)",
+      "name": "photos",
       "size": 0,
       "previousName": null,
       "dateModified": "2024-07-08T13:03:01.2874797+00:00",

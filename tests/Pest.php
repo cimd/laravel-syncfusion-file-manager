@@ -41,7 +41,29 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function loadFixture(string $path, $key = null): array
 {
-    // ..
+    $path = join_paths(__DIR__, $path);
+
+    $data = json_decode(
+        file_get_contents($path), true
+    );
+
+    if ($key) {
+        return $data[$key];
+    }
+
+    return $data;
+}
+
+function join_paths(): string
+{
+    $paths = [];
+    foreach (func_get_args() as $arg) {
+        if ($arg !== '') {
+            $paths[] = $arg;
+        }
+    }
+
+    return preg_replace('#/+#', '/', implode('/', $paths));
 }

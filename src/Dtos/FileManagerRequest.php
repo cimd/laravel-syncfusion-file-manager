@@ -5,7 +5,7 @@ namespace Konnec\FileManager\Dtos;
 use Illuminate\Http\Request;
 use Spatie\LaravelData\Data;
 
-class ReadRequest extends Data
+class FileManagerRequest extends Data
 {
     public function __construct(
         public string $path,
@@ -18,9 +18,14 @@ class ReadRequest extends Data
     {
         return new self(
             path: $request->input('path', ''),
-            data: $request->input('data', []),
+            data: $request->has('data') ? self::dataDto($request->input('data')) : [],
             action: $request->input('action', 'read'),
             showHiddenItems: $request->input('showHiddenItems', false)
         );
+    }
+
+    private static function dataDto(array $data): array
+    {
+        return array_map(fn ($item) => DataDto::fromArray($item), $data);
     }
 }
